@@ -51,6 +51,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
    </xsl:element>
 </xsl:template>
 
+<!-- Simply output root element; other elements change, this one doesn't.-->
+<xsl:template match="item[@parent='-1']">
+	<xsl:copy-of select="."/>
+</xsl:template>
+
 <!-- For all other blocks, in y-direction; make them start where root does, and keep the same y-length -->
 <xsl:template match="item[@parent!='-1']">
 	<item>
