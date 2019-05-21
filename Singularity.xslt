@@ -40,6 +40,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	 <xsl:value-of select="name()"/>
 </xsl:variable>
  <xsl:element name="{$name}">
+ <xsl:element name="plan">
 	 <xsl:attribute name="accumulateHealth" >
 		<xsl:value-of select="'true'"/>
 	 </xsl:attribute>
@@ -47,6 +48,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 		<xsl:value-of select="'false'"/>
 	 </xsl:attribute>
 <xsl:apply-templates select="node()"/>
+ </xsl:element>
    </xsl:element>
 </xsl:template>
 
